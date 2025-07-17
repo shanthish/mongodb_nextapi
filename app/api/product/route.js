@@ -5,7 +5,7 @@ import { ProductModel } from "@/model/productmodel";
 export let GET = async (req) => {
   try {
     await connectDB();
-    const products = await productModel.find();
+    const products = await ProductModel.find();
     return Response.json(
       {
         status: "Success",
@@ -28,7 +28,7 @@ export let POST = async (req) => {
   try {
     await connectDB();
     const product = await req.json();
-    const newProduct = await productModel.create(product);
+    const newProduct = await ProductModel.create(product);
     // products.push(newProduct)
     return Response.json(
       {
@@ -115,5 +115,5 @@ catch(err){
 
 // import { products } from "@/lib/products";
 // import { connectDB } from "@/lib/db";
-// import { productModel } from "@/models/productModel";
+// import { ProductModel } from "@/models/productModel";
 
