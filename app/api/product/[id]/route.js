@@ -1,6 +1,6 @@
 // import { products } from "@/lib/products";
 import { connectDB } from "@/lib/db";
-import { productModel } from "@/models/productModel";
+import { productModel } from "@/model/productModel";
 
 export let GET = async(_,{params}) =>{
     try{
