@@ -29,11 +29,10 @@ export let POST = async (req) => {
     await connectDb();
     const product = await req.json();
     const newProduct = await ProductModel.create(product);
-    // products.push(newProduct)
     return Response.json(
       {
         status: "Success",
-        length:products.length,
+        length:newProduct.length,
         data: {
           newProduct,
         },
@@ -52,40 +51,40 @@ export let POST = async (req) => {
 };
 
 
-export let PUT = async(req)=>{
-    try{
-    const data= await req.json();
-    if(!data){
-        return Response.json(
-            {
-                status:"fail" ,
-                message:"No data is sent"
-            },
-            {status:400}
-        )
-    }
-    // products=data;
-    return Response.json(
-        {
-            status:"success",
-            message:"Data is added successfully",
-            value:{
-                products
-            }
-        },
-        {status:200}
-    )
-}
-catch(err){
-    return Response.json(
-        {
-            status:"success",
-            message:err
-        },
-        {status:400}
-    )
-}
-}
+// export let PUT = async(req)=>{
+//   await connectDb();
+//     try{
+//     const data= await req.json();
+//     if(!data){
+//         return Response.json(
+//             {
+//                 status:"fail" ,
+//                 message:"No data is sent"
+//             },
+//             {status:400}
+//         )
+//     }
+//     return Response.json(
+//         {
+//             status:"success",
+//             message:"Data is added successfully",
+//             value:{
+//                 products
+//             }
+//         },
+//         {status:200}
+//     )
+// }
+// catch(err){
+//     return Response.json(
+//         {
+//             status:"success",
+//             message:err
+//         },
+//         {status:400}
+//     )
+// }
+// }
 
 
 

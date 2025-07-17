@@ -18,4 +18,4 @@ const productSchema = mongoose.Schema({
 
 // now we have created schema .Now create model below
 
-export const ProductModel = mongoose.model.Product || mongoose.model("Product",productSchema)
+export const ProductModel = mongoose.models.Product || mongoose.model("Product",productSchema)
